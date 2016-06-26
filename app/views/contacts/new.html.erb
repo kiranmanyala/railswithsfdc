@@ -1,0 +1,31 @@
+Enter new contact information
+<hr>
+
+<%= form_for @contact do |f| -%>
+   First Name:  <%= f.text_field :firstname %> <br/>
+    Last Name: <%= f.text_field :lastname %> <br/>
+   Email: <%= f.text_field :email %> <br/>
+    <%= f.submit %> 
+    
+<% end -%>
+
+Display All Contacts information
+<div class="container">
+
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.firstname %></td>
+        <td><%= contact.lastname %></td>
+        <td><%= contact.email %></td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
